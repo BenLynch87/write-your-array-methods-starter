@@ -13,26 +13,45 @@ function newForEach(array, callback){
 }
 
 // complete the functions below so that they mimic the built in methods
-function newSome() {
-
+function newSome(array, argument) {
+    for (const element of array){
+        if (argument(element)){return true}
+    }
+    return false
 }
 
-function newEvery() {
-
+function newEvery(array, argument) {
+    for (const element of array){
+        if (!argument(element)){return false}
+    }
+    return true
 }
 
-function newFind() {
-
+function newFind(array, argument) {
+    for (const element of array){
+        if (argument(element)){return element}
+    }
 }
 
-function newFindIndex() {
-
+function newFindIndex(array, argument) {
+    for (let i = 0; i < array.length; i++){
+        if(argument(array[i])){return i}
+    }
+    return -1
 }
 
-function newMap() {
-
+function newMap(array, argument) {
+    let out = []
+    for(const element of array){out.push(argument(element))}
+    return out
 }
 
-function newFilter() {
-
+function newFilter(array, argument) {
+    let out = []
+    for(const element of array){
+        if (argument(element)){
+            out.push(element)
+        }
+    }
+    return out
 }
